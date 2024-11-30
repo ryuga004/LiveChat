@@ -7,6 +7,7 @@ import axios from "axios";
 import { sendMessageRoute, recieveMessageRoute } from "../utils/APIRoutes";
 const REACT_APP_LOCALHOST_KEY = "LoggedIn";
 export default function ChatContainer({ currentChat, socket }) {
+  axios.defaults.withCredentials = true;
   const [messages, setMessages] = useState([]);
   const scrollRef = useRef();
   const [arrivalMessage, setArrivalMessage] = useState(null);

@@ -11,7 +11,7 @@ const REACT_APP_LOCALHOST_KEY = "LoggedIn";
 
 export default function Chat() {
     const navigate = useNavigate();
-
+axios.defaults.withCredentials = true;
     const socket = useRef(null);
 
     const [contacts, setContacts] = useState([]);

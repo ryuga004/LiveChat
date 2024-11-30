@@ -9,7 +9,7 @@ require("dotenv").config();
 
 app.use(cors(
     {
-        origin: "https://live-chat-frontend-lemon.vercel.app",
+        origin: 'https://live-chat-frontend-lemon.vercel.app',
         credentials: true
     }
 ));
@@ -41,7 +41,7 @@ const server = app.listen(process.env.PORT, () =>
 // });
 const io = socket(server, {
     cors: {
-        origin: "https://live-chat-frontend-lemon.vercel.app",
+        origin: 'https://live-chat-frontend-lemon.vercel.app',
         credentials: true
     }
 })

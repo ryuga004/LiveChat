@@ -8,6 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { registerRoute } from "../utils/APIRoutes";
 const REACT_APP_LOCALHOST_KEY = "LoggedIn";
 export default function Register() {
+    axios.defaults.withCredentials = true;
     const navigate = useNavigate();
     const toastOptions = {
         position: "bottom-right",

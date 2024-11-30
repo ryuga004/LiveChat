@@ -11,6 +11,7 @@ const REACT_APP_LOCALHOST_KEY = "LoggedIn";
 
 export default function SetAvatar() {
     const api = `https://api.multiavatar.com/4645646`;
+    axios.defaults.withCredentials = true;
     const navigate = useNavigate();
     const [avatars, setAvatars] = useState([]);
     const [isLoading, setIsLoading] = useState(true);

@@ -8,10 +8,10 @@ import ChatContainer from "../components/ChatContainer";
 import Contacts from "../components/Contacts";
 import Welcome from "../components/Welcome";
 const REACT_APP_LOCALHOST_KEY = "LoggedIn";
+axios.defaults.withCredentials = true;
 
 export default function Chat() {
     const navigate = useNavigate();
-axios.defaults.withCredentials = true;
     const socket = useRef(null);
 
     const [contacts, setContacts] = useState([]);

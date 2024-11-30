@@ -18,6 +18,10 @@ mongoose.connect(process.env.MONGO_URL)
         console.log(err.message);
     });
 
+app.get("/", (req, res) => {
+    res.json("Hello");
+})
+
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 

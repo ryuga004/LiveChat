@@ -7,14 +7,7 @@ const app = express();
 const socket = require("socket.io");
 require("dotenv").config();
 
-app.use(cors(
-    {
-        origin: "https://live-chat-frontend-lemon.vercel.app", 
-        methods: ["GET", "POST", "PUT", "DELETE"],
-        credentials: true, 
-        allowedHeaders: ["Content-Type", "Authorization"], 
-    }
-));
+app.use(cors());
 app.use(express.json());
 
 mongoose.connect(process.env.MONGO_URL)
@@ -44,9 +37,7 @@ const server = app.listen(process.env.PORT, () =>
 const io = socket(server, {
     cors: {
         origin: "https://live-chat-frontend-lemon.vercel.app", 
-        methods: ["GET", "POST", "PUT", "DELETE"],
         credentials: true, 
-        allowedHeaders: ["Content-Type", "Authorization"],
     }
 })
 

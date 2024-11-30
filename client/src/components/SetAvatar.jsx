@@ -9,9 +9,9 @@ import { useNavigate } from "react-router-dom";
 import { setAvatarRoute } from "../utils/APIRoutes";
 const REACT_APP_LOCALHOST_KEY = "LoggedIn";
 
+    axios.defaults.withCredentials = true;
 export default function SetAvatar() {
     const api = `https://api.multiavatar.com/4645646`;
-    axios.defaults.withCredentials = true;
     const navigate = useNavigate();
     const [avatars, setAvatars] = useState([]);
     const [isLoading, setIsLoading] = useState(true);

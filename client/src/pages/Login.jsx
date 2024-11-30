@@ -8,6 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { loginRoute } from "../utils/APIRoutes";
 const REACT_APP_LOCALHOST_KEY = "LoggedIn";
 export default function Login() {
+  axios.defaults.withCredentials = true;
   const navigate = useNavigate();
   const [values, setValues] = useState({ username: "", password: "" });
   const toastOptions = {

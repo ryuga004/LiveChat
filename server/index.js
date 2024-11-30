@@ -7,7 +7,12 @@ const app = express();
 const socket = require("socket.io");
 require("dotenv").config();
 
-app.use(cors());
+app.use(cors(
+    {
+        origin: "https://live-chat-frontend-lemon.vercel.app",
+        credentials: true
+    }
+));
 app.use(express.json());
 
 mongoose.connect(process.env.MONGO_URL)
@@ -36,7 +41,7 @@ const server = app.listen(process.env.PORT, () =>
 // });
 const io = socket(server, {
     cors: {
-        origin: "https://live-chat-frontend-lemon.vercel.app/",
+        origin: "https://live-chat-frontend-lemon.vercel.app",
         credentials: true
     }
 })

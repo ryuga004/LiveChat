@@ -7,6 +7,7 @@ import { logoutRoute } from "../utils/APIRoutes";
 const REACT_APP_LOCALHOST_KEY = "LoggedIn";
 
 export default function Logout() {
+    axios.defaults.withCredentials = true;
     const navigate = useNavigate();
     const handleClick = async () => {
         const id = await JSON.parse(

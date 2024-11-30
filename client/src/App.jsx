@@ -4,7 +4,9 @@ import SetAvatar from "./components/SetAvatar";
 import Chat from "./pages/Chat";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import axios from 'axios'
 export default function App() {
+  axios.defaults.withCredentials = true;
   return (
     <BrowserRouter>
       <Routes>
